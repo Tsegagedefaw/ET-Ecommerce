@@ -1,0 +1,33 @@
+.navcolor {
+    color: black;
+}
+
+.nav-height {
+    height: 100px;
+}
+
+.nav-item-our:hover {
+    background-color: #a8ce3d;
+    border-radius: 10px;
+    color: white;
+}
+
+.our-badge-bg {
+    background-color: #a8ce3d;
+}
+
+
+/* For Search */
+
+#search {
+    width: 80px;
+    transition: width .5s ease
+}
+
+#search:focus {
+    width: 150px
+}
+
+.btn-outline-secondary:hover {
+    background-color: #a8ce3d;
+}

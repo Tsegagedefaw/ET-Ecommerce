@@ -1,0 +1,12 @@
+.new-hover:hover {
+    background-color: lightgray;
+    cursor: pointer;
+}
+
+.scroll {
+    overflow-x: scroll;
+}
+
+.scroll::-webkit-scrollbar {
+    display: none;
+}
