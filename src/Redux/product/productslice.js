@@ -1,18 +1,94 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import axios from "axios";
 
 const initialState = {
-    numberofproduct: 10,
-}
+        loading: false,
+        product: [{
+                id: '1',
+                img: 'logo512.png',
+                name: 'Iphone 13 proMax',
+                price: '$2500',
+                rate: 5
+            },
+            {
+                id: '2',
+                img: 'logo512.png',
+                name: 'Iphone 13 proMax',
+                price: '$2500',
+                rate: 5
+            },
+            {
+                id: '3',
+                img: 'logo512.png',
+                name: 'Iphone 13 proMax',
+                price: '$2500',
+                rate: 5
+            },
+            {
+                id: '4',
+                img: 'logo512.png',
+                name: 'Iphone 13 proMax',
+                price: '$2500',
+                rate: 5
+            },
+            {
+                id: '5',
+                img: 'logo512.png',
+                name: 'Iphone 13 proMax',
+                price: '$2500',
+                rate: 5
+            },
+            {
+                id: '6',
+                img: 'logo512.png',
+                name: 'Iphone 13 proMax',
+                price: '$2500',
+                rate: 5
+            },
+            {
+                id: '7',
+                img: 'logo512.png',
+                name: 'Iphone 13 proMax',
+                price: '$2500',
+                rate: 5
+            },
+            {
+                id: '8',
+                img: 'logo512.png',
+                name: 'Iphone 13 proMax',
+                price: '$2500',
+                rate: 5
+            },
+            {
+                id: '9',
+                img: 'logo512.png',
+                name: 'Iphone 13 proMax',
+                price: '$2500',
+                rate: 5
+            },
+            {
+                id: '10',
+                img: 'logo512.png',
+                name: 'Iphone 13 proMax',
+                price: '$2500',
+                rate: 5
+            },
+        ],
+        error: '',
+    }
+    // 
 
+const fetchproducts = createAsyncThunk(async() => {
+    const res = await axios
+        .get('https://fakestoreapi.com/products');
+    return initialState = res.data
+})
 const productSlice = createSlice({
     name: 'product',
-    initialState,
+    initialState: fetchproducts,
     reducers: {
-        ordered: (state) => {
+        productlist: (state) => {
             state.numberofproduct--
-        },
-        restocked: (state, action) => {
-            state.numberofproduct += action.payload
         },
     },
 })
